@@ -1,6 +1,7 @@
 function switcher(){
     const mvr = document.getElementById('mover');
     const btn = document.getElementById('button');
+    const output = document.querySelector('#output');
     const body = document.getElementsByTagName("BODY")[0];
     
     if(btn.className == "button day"){
@@ -8,12 +9,14 @@ function switcher(){
         btn.className = "button night";
         btn.style.boxShadow = "0px 0px 16px rgba(255, 255, 255, 0.25)";
         body.style.backgroundColor = "#0E0E0E";
+        output.style.backgroundColor = "#0E0E0E";
         body.style.color = "white";
       } else{
         mvr.style.transform = "translateY(0)";
         btn.className = "button day";
         btn.style.boxShadow = "0px 0px 16px rgba(0, 0, 0, 0.25)";
         body.style.backgroundColor = "white";
+        output.style.backgroundColor = "white";
         body.style.color = "Black";
       }
   }
@@ -50,9 +53,9 @@ button.addEventListener('click',function searchup(s){
     }
     })
     .then(g =>{
-    document.getElementById("output").innerHTML="";
+    document.getElementById("search-results").innerHTML="<br>";
     for(var i=0; i<results.length; i++){
-    document.getElementById("search-results").innerHTML+="<a href='"+links[i]+"' target='_blank'>"+results[i].title+"</a><br>"+results[i].snippet+"<br>";
+    document.getElementById("search-results").innerHTML+="<a href='"+links[i]+"' target='_blank'>"+results[i].title+"</a><br>"+results[i].snippet+"<br><br><br><br>";
     }
     });
     });
