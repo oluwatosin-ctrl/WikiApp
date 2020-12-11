@@ -62,7 +62,6 @@ html{
   .buttoni{
       border-radius: 5px;
       height: 30px;
-      width: 5%;
       background-color: darkgray;
   }
   .inputvalue:focus{
